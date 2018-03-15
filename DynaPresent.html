@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Dyna-present</title>
+		<link rel="stylesheet" type="text/css" href="DynaStyle.css"> 
+		<script type="text/javascript" src="Dynamic.js"></script>
+		<script type="text/javascript" src="Guard.js"></script>
+		<script type="text/javascript" src="Graph/bfs.js"></script>
+		<script type="text/javascript" src="Graph/cc.js"></script>
+		<script type="text/javascript" src="Graph/dfs.js"></script>
+		<script type="text/javascript" src="Graph/dijkstra.js"></script>
+		<script type="text/javascript" src="Graph/directed.js"></script>
+		<script type="text/javascript" src="Graph/kruskal.js"></script>
+		<script type="text/javascript" src="Graph/prim.js"></script>
+		<script type="text/javascript" src="Graph/scc.js"></script>
+		<script type="text/javascript" src="Graph/topological.js"></script>
+		<script type="text/javascript" src="Queue/queue.js"></script>
+		<script type="text/javascript" src="Search/bs.js"></script>
+		<script type="text/javascript" src="Sorting/heap.js"></script>
+		<script type="text/javascript" src="Sorting/insertion.js"></script>
+		<script type="text/javascript" src="Sorting/merge.js"></script>
+		<script type="text/javascript" src="Sorting/quick.js"></script>
+		<script type="text/javascript" src="Sorting/selection.js"></script>
+		<script type="text/javascript" src="Sorting/shell.js"></script>
+		<script type="text/javascript" src="Stack/stack.js"></script>
+		<script type="text/javascript" src="String/kmp.js"></script>
+		<script type="text/javascript" src="Tree/bst.js"></script>
+		<script type="text/javascript" src="Tree/RedBlackBST.js"></script>
+		<script type="text/javascript" src="Tree/uf.js"></script>
+	</head>
+	<body>
+		<h3>
+			<a href="Help.html">帮助文档</a>
+		</h3>
+		<div id="dyna">
+			<svg id="dynaMark" width="1000" height='50'>
+				
+			</svg>
+			<svg id="dynaContent" width="1000" height="1200">
+				
+			</svg>
+		</div>
+		<script type="text/javascript"">
+			var url=decodeURIComponent(location.href);	//获取地址
+			var a = url.substring(url.indexOf('showcode=') + 9)
+			var script = document.createElement("script");	//创建script 
+			script.setAttribute("type", "text/javascript"); //添加属性
+			var code = document.createTextNode(a);	//添加文本节点
+			script.appendChild(code);	//为当前script添加
+			var bodys = document.getElementsByTagName("body"); //找到body
+			bodys[0].appendChild(script); //添加script
+		</script>
+
+	</body>
+</html>

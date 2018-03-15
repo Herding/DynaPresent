@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Dyna-present BS</title>
+		<link rel="stylesheet" type="text/css" href="../../DynaStyle.css"> 
+		<script type="text/javascript" src="../../Dynamic.js"></script>
+		<script type="text/javascript" src="../../Guard.js"></script>
+	</head>
+	<body>
+		<div id="dyna">
+			<svg id="dynaMark" width="1000" height='50'>
+				
+			</svg>
+			<svg id="dynaContent" width="1000" height="300">
+				
+			</svg>
+		</div>
+		<div>
+			<article>
+				实现二分查找的动态演示，仅需创建bs对象，之后通过putVal()接口，添加元素，通过delVal()接口，删除元素，或通过getVal()接口，查找元素。
+				
+				<pre>
+	<code>
+	bs.create(11); //创建的最多可容纳11个元素的bs对象
+	var num = [5, 13, 19, 92, 21, 37, 75, 64, 80, 56, 88];
+
+	for (var i = 0; i < 9; ++i) //添加元素
+		bs.putVal(num[i]);
+
+	bs.getVal(92); //查找元素
+
+	bs.putVal(37); //添加元素
+
+	bs.getVal(88);
+
+	bs.putVal(9); //添加元素
+
+	bs.delVal(19); //删除元素
+	bs.delVal(0);
+
+	bs.present(); //调用动态演示接口
+
+	</code>
+				</pre>
+			</article>
+		</div>
+	</body>
+	<script type="application/ecmascript" src="../../Search/bs.js"></script>
+	<script type="text/javascript">
+		bs.create(11);
+		var num = [5, 13, 19, 92, 21, 37, 75, 64, 80, 56, 88];
+
+		for (var i = 0; i < 9; ++i)
+			bs.putVal(num[i]);
+		bs.getVal(92);
+		bs.putVal(37);
+		bs.getVal(88);
+		bs.putVal(9);
+		bs.delVal(19);
+		bs.delVal(0);
+
+		bs.present();
+	</script>
+</html>

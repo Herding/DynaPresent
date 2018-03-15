@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Dyna-present UF</title>
+		<link rel="stylesheet" type="text/css" href="../../DynaStyle.css"> 
+		<script type="text/javascript" src="../../Dynamic.js"></script>
+		<script type="text/javascript" src="../../Guard.js"></script>
+	</head>
+	<body>
+		<div id="dyna">
+			<svg id="dynaMark" width="1000" height='50'>
+				
+			</svg>
+			<svg id="dynaContent" width="1000" height="600">
+				
+			</svg>
+		</div>
+		<div>
+			<article>
+				对并查集相关操作的动态演示中，首先，创建UF对象；之后，通过union()接口进行元素的合并、通过find()接口进行元素的查找；最后通过present()接口，进行动态演示。
+				<pre>
+	<code>
+	uf.create(10); //创建含有10个元素的UF对象
+
+	uf.union(5, 4); //将4， 5元素合并
+	uf.union(4, 9);
+	uf.union(6, 7);
+	uf.union(10, 5);
+	uf.union(3, 2);
+	uf.union(9, 10);
+	uf.union(6, 1);
+	uf.union(8, 3);
+	uf.union(7, 3);
+	uf.union(2, 1);
+	uf.union(7, 8);
+	uf.union(9, 9);
+
+	uf.find(9); //查找元素9
+	uf.present(); //调用动态演示接口
+
+	</code>
+				</pre>
+				</code>
+			</article>
+		</div>
+	</body>
+	<script type="application/ecmascript" src="../../Tree/uf.js"></script>
+	<script type="text/javascript">
+		uf.create(10);
+		uf.union(5, 4);
+		uf.union(4, 9);
+		uf.union(6, 7);
+		uf.union(10, 5);
+		uf.union(3, 2);
+		uf.union(9, 10);
+		uf.union(6, 1);
+		uf.union(8, 3);
+		uf.union(7, 3);
+		uf.union(2, 1);
+		uf.union(7, 8);
+		uf.union(9, 9);
+		uf.find(9);
+		uf.present();
+	</script>
+</html>

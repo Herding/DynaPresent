@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Dyna-present redBlackBST</title>
+		<link rel="stylesheet" type="text/css" href="../../DynaStyle.css"> 
+		<script type="text/javascript" src="../../Dynamic.js"></script>
+		<script type="text/javascript" src="../../Guard.js"></script>
+	</head>
+	<body>
+		<div id="dyna">
+			<svg id="dynaMark" width="1000" height='50'>
+				
+			</svg>
+			<svg id="dynaContent" width="1000" height="600">
+				
+			</svg>
+		</div>
+		<div>
+			<article>
+				实现动态的红黑二叉树相关操作的动态演示，首先，建立redBlackBST对象；之后通过putVal()，向二叉树中添加元素
+				<pre>
+	<code>
+	redBlackBST.create(15); //创建最多含有15个元素的redBlackBST对象
+
+	var num = [12, 5, 34, 1, 6, 23, 89, 3, 56, 80, 64, 72, 50, 99, 100];//添加字母为元素
+
+	for (var i = 0; i < 15; ++i) //添加元素
+		redBlackBST.putVal(num[i]);
+
+	redBlackBST.present(); //调用动态演示接口
+
+	</code>
+				</pre>
+			</article>
+		</div>
+	</body>
+	<script type="application/ecmascript" src="../../Tree/redBlackBST.js"></script>
+	<script type="text/javascript">
+		redBlackBST.create(15);
+		var num = [12, 5, 34, 1, 6, 23, 89, 3, 56, 80, 64, 72, 50, 99, 100];
+		for (var i = 0; i < 15; ++i)
+			redBlackBST.putVal(num[i]);
+
+		redBlackBST.present();
+	</script>
+</html>

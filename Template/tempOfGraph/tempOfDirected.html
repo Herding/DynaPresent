@@ -1,0 +1,98 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Dyna-present Directed</title>
+		<link rel="stylesheet" type="text/css" href="../../DynaStyle.css"> 
+		<script type="text/javascript" src="../../Dynamic.js"></script>
+		<script type="text/javascript" src="../../Guard.js"></script>
+	</head>
+	<body>
+		<div id="dyna">
+			<svg id="dynaMark" width="1000" height='50'>
+				
+			</svg>
+			<svg id="dynaContent" width="1000" height="600">
+				
+			</svg>
+		</div>
+		<div>
+			<article>
+				作为图的算法需要先建图，后进行相关动态演示接口的调用。<br>
+				<br>
+				<ol>
+					<li>建图时调用相关接口，以实现建图的目的。本算法使用的是diGraph对象，这个对象所建成的图为有向无权图</li>
+					<li>完成建图后，调用directed对象进行可达性的判断，对象首先需要传入图（diGraph）进行创建</li>
+					<li>directed对象可以判断图中的顶点是否可达于单个结点，或者可达与结点集合中的点</li>
+					<li>判断完成之后，进行调用算法演示接口，即directed.present()，进行动态展示</li>
+					注：其中用diGraph对象的创建的图，只需将点的个数并通过addEdge(弧尾， 弧头)添加有向边即可
+				</ol>
+				
+				<pre>
+	<code>
+	diGraph.create(13); //创建具有13个结点的有向图
+	diGraph.addEdge(0, 1); //添加有向边0 -> 1
+	diGraph.addEdge(0, 5);
+	diGraph.addEdge(2, 0);
+	diGraph.addEdge(2, 3);
+	diGraph.addEdge(3, 2);
+	diGraph.addEdge(3, 5);
+	diGraph.addEdge(4, 2);
+	diGraph.addEdge(4, 3);
+	diGraph.addEdge(5, 4);
+	diGraph.addEdge(6, 0);
+	diGraph.addEdge(6, 4);
+	diGraph.addEdge(6, 9);
+	diGraph.addEdge(7, 6);
+	diGraph.addEdge(7, 8);
+	diGraph.addEdge(8, 7);
+	diGraph.addEdge(8, 9);
+	diGraph.addEdge(9, 10);
+	diGraph.addEdge(9, 11);
+	diGraph.addEdge(10, 12);
+	diGraph.addEdge(11, 12);
+	diGraph.addEdge(12, 9);
+
+	directed.create(diGraph); //传入图用于算法的创建
+	directed.diOfSingle(diGraph, 0); //对图中的顶点是否有路径可达于0，进行判断
+	// s = [0, 9, 12];
+	// directed.diOfMultiple(diGraph, s); //对图中的顶点是否有路径可达于顶点集合s，进行判断
+	directed.present(); //动态演示
+	</code>
+				</pre>
+				
+			</article>
+		</div>
+	</body>
+	<script type="application/ecmascript" src="../../Graph/directed.js"></script>
+	<script type="text/javascript">
+		diGraph.create(13);
+		diGraph.addEdge(0, 1);
+		diGraph.addEdge(0, 5);
+		diGraph.addEdge(2, 0);
+		diGraph.addEdge(2, 3);
+		diGraph.addEdge(3, 2);
+		diGraph.addEdge(3, 5);
+		diGraph.addEdge(4, 2);
+		diGraph.addEdge(4, 3);
+		diGraph.addEdge(5, 4);
+		diGraph.addEdge(6, 0);
+		diGraph.addEdge(6, 4);
+		diGraph.addEdge(6, 9);
+		diGraph.addEdge(7, 6);
+		diGraph.addEdge(7, 8);
+		diGraph.addEdge(8, 7);
+		diGraph.addEdge(8, 9);
+		diGraph.addEdge(9, 10);
+		diGraph.addEdge(9, 11);
+		diGraph.addEdge(10, 12);
+		diGraph.addEdge(11, 12);
+		diGraph.addEdge(12, 9);
+
+		directed.create(diGraph);
+		directed.diOfSingle(diGraph, 0);
+		// s = [0, 9, 12];
+		// directed.diOfMultiple(diGraph, s);
+		directed.present();
+	</script>
+</html>

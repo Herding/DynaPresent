@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Dyna-present Queue</title>
+		<link rel="stylesheet" type="text/css" href="../../DynaStyle.css"> 
+		<script type="text/javascript" src="../../Dynamic.js"></script>
+		<script type="text/javascript" src="../../Guard.js"></script>
+	</head>
+	<body>
+		<div id="dyna">
+			<svg id="dynaMark" width="1000" height='50'>
+				
+			</svg>
+			<svg id="dynaContent" width="1000" height="600">
+				
+			</svg>
+		</div>
+		<div>
+			<article>
+				实现队列的“入队出队”操作的时候，可直接创建queue对象，并将调用相关接口实现。
+				<pre>
+	<code>
+	queue.create(7); //创建的队列最大容量，为7个元素。
+	var num = [12, 5, 34, 6, 23, 89];
+
+	for ( var i = 0; i < 6; ++i) //入队操作
+	queue.enqueue(num[i]);
+
+	queue.dequeue(12); //出队操作
+	queue.dequeue(9);
+	queue.enqueue(100); //入队操作
+	queue.enqueue(50);
+
+	queue.present(); //调用动态演示接口
+	
+
+	</code>
+				</pre>
+				
+			</article>
+		</div>
+	</body>
+	<script type="application/ecmascript" src="../../Queue/queue.js"></script>
+	<script type="text/javascript">
+		queue.create(7);
+		var num = [12, 5, 34, 6, 23, 89];
+
+		for ( var i = 0; i < 6; ++i)
+			queue.enqueue(num[i]);
+
+		queue.dequeue(12);
+		queue.dequeue(9);
+		queue.enqueue(100);
+		queue.enqueue(50);
+
+		queue.present();
+	</script>
+</html>

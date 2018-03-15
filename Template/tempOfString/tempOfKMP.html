@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Dyna-present KMP</title>
+		<link rel="stylesheet" type="text/css" href="../../DynaStyle.css"> 
+		<script type="text/javascript" src="../../Dynamic.js"></script>
+		<script type="text/javascript" src="../../Guard.js"></script>
+	</head>
+	<body>
+		<div id="dyna">
+			<svg id="dynaMark" width="1000" height='50'>
+				
+			</svg>
+			<svg id="dynaContent" width="1000" height="600">
+				
+			</svg>
+		</div>
+		<div>
+			<article>
+				实现采用KMP算法进行字符串的动态演示，直接创建kmp对象；之后，调用search()接口，进行匹配；最后通过present()接口，实现动态演示的调用。
+				<pre>
+	<code>
+	kmp.create('bbcabcdababcdabcdabd', 'abcdabd'); //将文本'bbcabcdababcdabcdabd'，与模式串'abcdabd'，作为参数传入创建kmp对象
+
+	kmp.search(); //调用匹配接口
+
+	kmp.present(); //调用动态演示接口
+	
+	</code>
+				</pre>
+			</article>
+		</div>
+	</body>
+	<script type="application/ecmascript" src="../../String/kmp.js"></script>
+	<script type="text/javascript">
+		kmp.create('bbcabcdababcdabcdabd', 'abcdabd');
+		kmp.search();
+		kmp.present();
+	</script>
+</html>

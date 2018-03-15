@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>首页</title>
+	<link rel="stylesheet" type="text/css" href="DynaStyle.css"> 
+</head>
+<body>
+	<h3>
+		<a href="Help.html">帮助文档</a>
+	</h3>
+	
+	<form>
+		<table>
+			<tr>
+				<h4>代码输入区</h4>
+			</tr>
+			<tr>
+				<td>
+					<textarea class="ctarea" name="showcode" placeholder="编写你的代码..." required="required"></textarea>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<input class="cbtn csub" type="button" name="sumbit" value="提交">
+				</td>
+			</tr>
+		</table>
+	</form>
+	<script type="text/javascript">
+
+		var csub = document.getElementsByClassName("csub")[0];
+		csub.onclick=function() {
+			// var showtype = document.getElementsByName("showtype")[0].value;
+			var showcode = document.getElementsByName("showcode")[0].value;
+			var myurl = "DynaPresent.html?showcode="+showcode;
+			window.location.assign(encodeURI(myurl));
+		};
+	</script>
+</body>
+</html>

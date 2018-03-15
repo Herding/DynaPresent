@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Dyna-present CC</title>
+		<link rel="stylesheet" type="text/css" href="../../DynaStyle.css"> 
+		<script type="text/javascript" src="../../Dynamic.js"></script>
+		<script type="text/javascript" src="../../Guard.js"></script>
+	</head>
+	<body>
+		<div id="dyna">
+			<svg id="dynaMark" width="1000" height='50'>
+				
+			</svg>
+			<svg id="dynaContent" width="1000" height="600">
+				
+			</svg>
+		</div>
+		<div>
+			<article>
+				作为图的算法需要先建图，后进行相关动态演示接口的调用。<br>
+				<br>
+				<ol>
+					<li>建图时调用相关接口，以实现建图的目的。本算法使用的是graph对象，这个对象所建成的图为无向无权图</li>
+					<li>完成建图后，调用cc对象对graph判断有多少连通分量，其中graph需要作为参数传入</li>
+					<li>完成cc对象创建之后，进行调用算法演示接口，即cc.present()，进行动态展示</li>
+					注：其中用graph对象的创建的图，只需将点的个数并将添加相应的边即可
+				</ol>
+				<pre>
+	<code>
+	graph.create(15); //创建具有15个结点的无向无权图
+	graph.addEdge(0, 5); //在无向无权图中添加0 - 5这条边
+	graph.addEdge(4, 3);
+	graph.addEdge(0, 1);
+	graph.addEdge(9, 12);
+	graph.addEdge(6, 4);
+	graph.addEdge(5, 4);
+	graph.addEdge(0, 2);
+	graph.addEdge(11,12);
+	graph.addEdge(9, 10);
+	graph.addEdge(0, 6);
+	graph.addEdge(7, 8);
+	graph.addEdge(9, 11);
+	graph.addEdge(5, 3);
+	graph.addEdge(3, 3);
+
+	cc.create(graph, 0); //传入图用于算法的创建
+	cc.present(); //调用动态演示接口
+	</code>
+				</pre>
+
+			</article>
+		</div>
+	</body>
+	<script type="application/ecmascript" src="../../Graph/cc.js"></script>
+	<script type="text/javascript">
+		graph.create(15);
+		graph.addEdge(0, 5);
+		graph.addEdge(4, 3);
+		graph.addEdge(0, 1);
+		graph.addEdge(9, 12);
+		graph.addEdge(6, 4);
+		graph.addEdge(5, 4);
+		graph.addEdge(0, 2);
+		graph.addEdge(11,12);
+		graph.addEdge(9, 10);
+		graph.addEdge(0, 6);
+		graph.addEdge(7, 8);
+		graph.addEdge(9, 11);
+		graph.addEdge(5, 3);
+		graph.addEdge(3, 3);
+
+		cc.create(graph);
+		cc.present();
+	</script>
+</html>

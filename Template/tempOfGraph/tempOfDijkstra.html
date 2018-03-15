@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Dyna-present Dijkstra</title>
+		<link rel="stylesheet" type="text/css" href="../../DynaStyle.css"> 
+		<script type="text/javascript" src="../../Dynamic.js"></script>
+		<script type="text/javascript" src="../../Guard.js"></script>
+	</head>
+	<body>
+		<div id="dyna">
+			<svg id="dynaMark" width="1000" height='50'>
+				
+			</svg>
+			<svg id="dynaContent" width="1000" height="600">
+				
+			</svg>
+		</div>
+		<div>
+			<article>
+				作为图的算法需要先建图，后进行相关动态演示接口的调用。<br>
+				<br>
+				<ol>
+					<li>建图时调用相关接口，以实现建图的目的。本算法使用的是ewDiGraph对象，这个对象所建成的图为有向带权图</li>
+					<li>完成建图后，调用dijkstra对象进行单源最短路径的创建，同时需要传入图（ewDiGraph）</li>
+					<li>完成dijkstra对象创建之后，进行调用算法演示接口，即dijkstra.present()，进行动态展示</li>
+					注：其中用ewDiGraph对象的创建的图，只需将点的个数并通过addEdge(弧尾， 弧头，权值)方法，添加有向边即可
+				</ol>
+				
+				<pre>
+	<code>
+	ewDiGraph.create(8); //创建具有8个顶点的有向带权图
+	ewDiGraph.addEdge(4, 5, 35); //向图中添加 4 -> 5 这条带有35权值的边
+	ewDiGraph.addEdge(5, 4, 35);
+	ewDiGraph.addEdge(4, 7, 37);
+	ewDiGraph.addEdge(5, 7, 28);
+	ewDiGraph.addEdge(7, 5, 28);
+	ewDiGraph.addEdge(5, 1, 32);
+	ewDiGraph.addEdge(0, 4, 38);
+	ewDiGraph.addEdge(0, 2, 26);
+	ewDiGraph.addEdge(7, 3, 39);
+	ewDiGraph.addEdge(1, 3, 29);
+	ewDiGraph.addEdge(2, 7, 34);
+	ewDiGraph.addEdge(6, 2, 40);
+	ewDiGraph.addEdge(3, 6, 52);
+	ewDiGraph.addEdge(6, 0, 58);
+	ewDiGraph.addEdge(6, 4, 93);
+	dijkstra.create(ewDiGraph, 0); //传入有向带权图以及初始结点，用于算法创建
+	dijkstra.present(); //动态演示
+	</code>
+				</pre>
+				
+			</article>
+		</div>
+	</body>
+	<script type="application/ecmascript" src="../../Graph/dijkstra.js"></script>
+	<script type="text/javascript">
+		ewDiGraph.create(8);
+		ewDiGraph.addEdge(4, 5, 35);
+		ewDiGraph.addEdge(5, 4, 35);
+		ewDiGraph.addEdge(4, 7, 37);
+		ewDiGraph.addEdge(5, 7, 28);
+		ewDiGraph.addEdge(7, 5, 28);
+		ewDiGraph.addEdge(5, 1, 32);
+		ewDiGraph.addEdge(0, 4, 38);
+		ewDiGraph.addEdge(0, 2, 26);
+		ewDiGraph.addEdge(7, 3, 39);
+		ewDiGraph.addEdge(1, 3, 29);
+		ewDiGraph.addEdge(2, 7, 34);
+		ewDiGraph.addEdge(6, 2, 40);
+		ewDiGraph.addEdge(3, 6, 52);
+		ewDiGraph.addEdge(6, 0, 58);
+		ewDiGraph.addEdge(6, 4, 93);
+		dijkstra.create(ewDiGraph, 0);
+		dijkstra.present();
+	</script>
+</html>

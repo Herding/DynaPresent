@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Dyna-present InsertionSort</title>
+		<link rel="stylesheet" type="text/css" href="../../DynaStyle.css"> 
+		<script type="text/javascript" src="../../Dynamic.js"></script>
+		<script type="text/javascript" src="../../Guard.js"></script>
+	</head>
+	<body>
+		<div id="dyna">
+			<svg id="dynaMark" width="1000" height='50'>
+				
+			</svg>
+			<svg id="dynaContent" width="1000" height="600">
+				
+			</svg>
+		</div>
+		<div>
+			<article>
+				实现插入排序的动态演示，直接创建insertion对象；之后，将待排序的元素通过putVal()接口添加；然后调用sort()接口，进行排序；最后通过present()接口，实现动态演示的调用。
+				<pre>
+	<code>
+	insertion.create(8); //创建最多含有8个元素的insertion
+	var num = [12, 5, 34, 6, 23, 89, 50, 100];
+
+	for (var i = 0; i < 8; ++i)//添加元素
+		insertion.putVal(num[i]);
+
+	insertion.sort(); //调用排序接口
+	insertion.present(); //调用动态演示接口
+
+	</code>
+				</pre>
+			</article>
+		</div>
+	</body>
+	<script type="application/ecmascript" src="../../Sorting/insertion.js"></script>
+	<script type="text/javascript">
+		insertion.create(8);
+		var num = [12, 5, 34, 6, 23, 89, 50, 100];
+		for (var i = 0; i < 8; ++i)
+			insertion.putVal(num[i]);
+
+		insertion.sort();
+		insertion.present();
+	</script>
+</html>
