@@ -17,7 +17,7 @@ var guard = {
 		}
 		else {
 			this.isSafe = false;
-			this.errors.push('需创建的元素个数+' + capacity + '是非整数，请输入' + '[1, ' + Max + ']中的一个值。');
+			this.errors.push('请输入' + '[1, ' + Max + ']中的一个值。');
 		}
 	},
 
@@ -51,7 +51,7 @@ var guard = {
 		if (Number.isInteger(v)) {
 			if (v < 0 || v > V) {
 				this.isSafe = false;
-				this.errors.push('边' + v + '，' + w + '其中的一个顶点元素不存在');
+				this.errors.push('边' + v + '顶点元素不存在');
 			}
 		}
 		else {

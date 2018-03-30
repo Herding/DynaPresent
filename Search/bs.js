@@ -278,8 +278,8 @@ var bs = {
 		state.setColor(index, dynaOfBS.COLOR_OF_REMOVE);
 		dynamic.stateList.push(state);
 
-		for (var j = this.size() - 1; j > index; --j) {
-			this.keys[j - 1] = this.keys[j];
+		for (var j = index; j < this.size() - 1; ++j) {
+			this.keys[j] = this.keys[j + 1];
 		}
 
 		dynaOfBS.stateOfRemove(this.locs, this.keys, this.size() - 1);

@@ -357,6 +357,9 @@ var graph = {
 		guard.isExistOfEdge(v, w, 1, this.V);
 		if (!guard.isSafe) return ;
 
+		for (var i = 0; i < this.adj[v].length; ++i)
+			if (this.adj[v][i] == w) return ;
+
 		this.adj[v].push(w);
 		if (v != w)
 			this.adj[w].push(v);
@@ -390,6 +393,9 @@ var diGraph = {
 	addEdge: function(v, w) {
 		guard.isExistOfEdge(v, w, 1, this.V);
 		if (!guard.isSafe) return ;
+
+		for (var i = 0; i < this.adj[v].length; ++i)
+			if (this.adj[v][i] == w) return ;
 
 		this.adj[v].push(w);
 		this.reAdj[w].push(v);
@@ -430,6 +436,10 @@ var ewGraph = {
 	addEdge: function(v, w, weight) {
 		guard.isExistOfEdge(v, w, weight, this.V);
 		if (!guard.isSafe) return ;
+
+		for (var i = 0; i < this.adj[v].length; ++i) {
+			if (this.adj[v].other(v) == w) return ;
+		}
 
 		e = new Edge(v, w, weight);
 		this.adj[v].push(e);
@@ -473,6 +483,10 @@ var ewDiGraph = {
 	addEdge: function(v, w, weight) {
 		guard.isExistOfEdge(v, w, weight, this.V);
 		if (!guard.isSafe) return ;
+
+		for (var i = 0; i < this.adj[v].length; ++i) {
+			if (this.adj[v].to() == w) return ;
+		}
 
 		e = new DirectedEdge(v, w, weight);
 		this.adj[v].push(e);
